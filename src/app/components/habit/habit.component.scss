@@ -1,0 +1,29 @@
+.container {
+  display: block;
+}
+
+.header-container {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+
+}
+
+table {
+  width: 90%;
+}

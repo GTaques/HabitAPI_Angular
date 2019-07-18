@@ -1,0 +1,16 @@
+<div mat-dialog-content>
+  <p>What habit do you wanna create?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.description">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.priority">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+</div>
