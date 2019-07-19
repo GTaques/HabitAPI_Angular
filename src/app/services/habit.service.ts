@@ -17,4 +17,11 @@ export class HabitService {
   getHabits(): Observable<Habit[]> {
     return this.http.get<Habit[]>("http://localhost:8000/habit/");
   }
+
+  postHabit(habit: Habit): Observable<Habit> {
+    return this.http.post<Habit>("http://localhost:8000/habit/", habit)
+      .pipe(
+        //catchError(this.handleError('addHero', hero))
+      )
+  }
 }

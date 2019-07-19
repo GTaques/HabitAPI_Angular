@@ -3,6 +3,7 @@ import { Habit } from '../../models/Habit';
 import { HabitFormComponent } from './habit-form/habit-form.component';
 import { HabitService } from '../../services/habit.service';
 import { MatDialog } from '@angular/material/dialog';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-habit',
@@ -26,14 +27,12 @@ export class HabitComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(HabitFormComponent, {
-      width: '250px',
-      data: {title: this.title, description: this.description, priority: this.priority}
+      width: '400px',
+      data: {title: this.title, description: this.description, priority: this.priority},
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-
-      this.habit = result;
+    dialogRef.afterClosed().subscribe(habit => {
+      this.createHabit(habit);
     });
   }
 
@@ -42,6 +41,13 @@ export class HabitComponent implements OnInit {
       .subscribe(data => {
         this.habits = data;
     })
+  }
+
+  createHabit(habit) {
+    this.habitService.postHabit(habit).subscribe( habit => {
+      this.habits.push(habit);
+      this.showHabit();
+    });
   }
 
 }

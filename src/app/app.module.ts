@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatTableModule, MatInputModule, MatFormFieldModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatTableModule, MatInputModule, MatFormFieldModule, MatDialogModule, MatSelectModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HabitComponent } from './components/habit/habit.component';
@@ -33,7 +33,8 @@ import { PriorityPipe } from './pipes/priority.pipe';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   exports: [
     HabitFormComponent,
